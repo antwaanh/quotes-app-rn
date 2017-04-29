@@ -1,5 +1,6 @@
 import React from 'react';
 import { View, Image, Text, StyleSheet, TouchableOpacity } from 'react-native';
+import { BottomButton } from '../components/Button';
 
 class Home extends React.Component {
   render() {
@@ -20,13 +21,10 @@ class Home extends React.Component {
             Create social media quotes for Twitter, Facebook, Instagram and more.
           </Text>
         </View>
-        <View style={styles.buttonContainer}>
-          <View style={styles.buttonWrapper}>
-            <TouchableOpacity style={styles.button}>
-              <Text style={styles.buttonText}>Start</Text>
-            </TouchableOpacity>
-          </View>
-        </View>
+        <BottomButton
+          label="Start"
+          press={() => this.props.navigation.navigate('my_quotes')}
+        />
       </View>
     );
   }
@@ -40,26 +38,27 @@ const styles = StyleSheet.create({
     backgroundColor: 'white'
   },
   iconContainer: {
-    flex: 3,
+    flex: 1,
     flexDirection: 'row'
   },
   icon: {
     height: 150,
     width: 150,
-    marginTop: 100,
+    marginTop: 200,
     alignSelf: 'center'
   },
   headerTextContainer: {
-    flex: 2,
-    alignItems: 'center'
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center'
   },
   heading: {
     fontSize: 42,
-    fontWeight: '200',
+    fontWeight: '300',
     color: 'rgb(124, 124,124)'
   },
   sub: {
-    fontWeight: '200',
+    fontWeight: '600',
     color: 'rgb(183,183,183)'
   },
   blurbTextContainer: {
@@ -70,29 +69,6 @@ const styles = StyleSheet.create({
     width: 300,
     fontWeight: '200',
     paddingHorizontal: 15,
-    textAlign: 'center'
-  },
-  buttonContainer: {
-    flex: 1,
-    width: '100%',
-    flexDirection: 'row'
-  },
-  buttonWrapper: {
-    alignSelf: 'flex-end',
-    borderTopWidth: StyleSheet.hairlineWidth,
-    borderTopColor: 'rgb(183,183,183)',
-    width: '100%'
-  },
-  button: {
-    justifyContent: 'center',
-    alignSelf: 'flex-end',
-    paddingVertical: 14,
-    width: '100%'
-  },
-  buttonText: {
-    color: 'rgb(21, 126, 251)',
-    fontSize: 18,
-    fontWeight: '400',
     textAlign: 'center'
   }
 });
